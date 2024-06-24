@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaiThanh.org</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/toast.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <!-- favicon -->
+  <link rel="icon" href="/assets/image/logo-saithanh-removebg-preview.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="container">
+                <div class="header-container-left">
+                    <div class="header-logo">
+                        <a href="">
+                            <img src="/assets/image/logo-saithanh-removebg-preview.png" alt="" class="header-logo-img">
+                        </a>
+                    </div>
+                </div>
+                <div class="header-container-search">
+                    <form action="" class="form-search">
+                        <span class="search-btn" onclick="searchAndScroll()"><i class="fa fa-search"></i></span>
+                        <input type="text" class="form-search-input" placeholder="Tìm kiếm ..." oninput="searchProducts()">
+                        <button class="filter-btn"><span>Lọc</span><i class="fa fa-sliders"></i></button>
+                    </form>
+                </div>
+                <div class="header-container-user">
+                    <ul class="header-container-user-list">
+                        <li class="header-container-user-item dnone open" onclick="openSearchMb()">
+                            <div class="cart-icon-menu">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </li>
+                        <li class="header-container-user-item close" onclick="closeSearchMb()">
+                            <div class="cart-icon-menu">
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </li>
+
+                        <li class="header-container-user-item open" onclick="openCart()">
+                            <div class="cart-icon-menu">
+                                <i class="fa fa-cart-plus"></i>
+                                <span class="count-product-cart">0</span>
+                            </div>
+            
+                        </li>
+
+
+                        <li class="header-container-user-item dropdown open">
+                            <i class="far fa-user"></i>
+                            <div class="auth-container">
+                                <span class="text-dndk">Đăng nhập / Đăng ký</span>
+                                <span class="text-tk">Tài khoản <i class="fa fa-caret-down"></i></span>
+                            </div>
+                            <ul class="header-container-user-menu">
+                                <li><a id="login" href="javascript:;"><i class="fa fa-sign-in-alt"></i> Đăng nhập</a></li>
+                                <li><a id="sign-up" href="javascript:;"><i class="fa fa-user-plus"></i> Đăng ký</a></li>
+                            </ul>
+                        </li>
+
+
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <nav class="header-product">
+        <div class="container">
+            <ul class="menu-list">
+                <li class="menu-list-item" onclick="showBrand('Aston Martin')"><a href="javascript:;" class="menu-link">Aston Martin</a></li>
+                <li class="menu-list-item" onclick="showBrand('Audi')"><a href="javascript:;" class="menu-link">Audi</a></li>
+                <li class="menu-list-item" onclick="showBrand('Bentley')"><a href="javascript:;" class="menu-link">Bentley</a></li>
+                <li class="menu-list-item" onclick="showBrand('BMW')"><a href="javascript:;" class="menu-link">BMW</a></li>
+                <li class="menu-list-item" onclick="showBrand('Ford')"><a href="javascript:;" class="menu-link">Ford</a></li>
+                <li class="menu-list-item" onclick="showBrand('Honda')"><a href="javascript:;" class="menu-link">Honda</a></li>
+                <li class="menu-list-item" onclick="showBrand('Hyundai')"><a href="javascript:;" class="menu-link">Hyundai</a></li>
+                <li class="menu-list-item" onclick="showBrand('Isuzu')"><a href="javascript:;" class="menu-link">Isuzu</a></li>
+                <li class="menu-list-item" onclick="showBrand('Jaguar')"><a href="javascript:;" class="menu-link">Jaguar</a></li>
+                <li class="menu-list-item" onclick="showBrand('Jeep')"><a href="javascript:;" class="menu-link">Jeep</a></li>
+                <li class="menu-list-item" onclick="showBrand('Kia')"><a href="javascript:;" class="menu-link">Kia</a></li>
+                <li class="menu-list-item" onclick="showBrand('Lexus')"><a href="javascript:;" class="menu-link">Lexus</a></li>
+                <li class="menu-list-item" onclick="showBrand('Maserati')"><a href="javascript:;" class="menu-link">Maserati</a></li>
+                <li class="menu-list-item" onclick="showBrand('Mercedes')"><a href="javascript:;" class="menu-link">Mercedes</a></li>
+                <li class="menu-list-item" onclick="showBrand('Mitsubishi')"><a href="javascript:;" class="menu-link">Mitsubishi</a></li>
+                <li class="menu-list-item" onclick="showBrand('Porsche')"><a href="javascript:;" class="menu-link">Porsche</a></li>
+                <li class="menu-list-item" onclick="showBrand('Land Rover')"><a href="javascript:;" class="menu-link">Land Rover</a></li>
+                <li class="menu-list-item" onclick="showBrand('Toyota')"><a href="javascript:;" class="menu-link">Toyota</a></li>
+                <li class="menu-list-item" onclick="showBrand('Peugeot')"><a href="javascript:;" class="menu-link">Peugeot</a></li>
+                <li class="menu-list-item" onclick="showBrand('VinFast')"><a href="javascript:;" class="menu-link">VinFast</a></li>
+                <li class="menu-list-item" onclick="showBrand('Volkswagen')"><a href="javascript:;" class="menu-link">Volkswagen</a></li>
+                <li class="menu-list-item" onclick="showBrand('Volvo')"><a href="javascript:;" class="menu-link">Volvo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="advanced-search">
+        <div class="container">
+            <div class="advanced-search-Style">
+                <span>Kiểu dáng</span>
+                <select name="" id="advanced-search-Style-select" onchange="searchProducts()">
+                    <option>Tất cả</option>
+                    <option>Sedan</option>
+                    <option>SUV</option>
+                    <option>Pickup</option>
+                    <option>Hatchback</option>
+                    <option>Coupe</option>
+                    <option>MPV</option>
+                    <option>Roadster</option>
+                </select>
+            </div>
+
+            <div class="advanced-search-Brand">
+                <span>Hãng xe</span>
+                <select name="" id="advanced-search-Brand-select" onchange="searchProducts()">
+                    <option>Tất cả</option>
+                    <option>Aston Martin</option>
+                    <option>Audi</option>
+                    <option>Bentley</option>
+                    <option>BMW</option>
+                    <option>Ford</option>
+                    <option>Honda</option>
+                    <option>Hyundai</option>
+                    <option>Isuzu</option>
+                    <option>Jaguar</option>
+                    <option>Jeep</option>
+                    <option>Kia</option>
+                    <option>Lexus</option>
+                    <option>Maserati</option>
+                    <option>Mercedes</option>
+                    <option>Mitsubishi</option>
+                    <option>Porsche</option>
+                    <option>Land Rover</option>
+                    <option>Toyota</option>
+                    <option>VinFast</option>
+                    <option>Volkswagen</option>
+                    <option>Volvo</option>
+                </select>
+            </div>
+
+            <div class="advanced-search-Price">
+                <span>Sắp xếp giá</span>
+                <select id="advanced-search-Price-select" onchange="searchProducts(this.value)">
+                    <option value="0">Giá mặc định</option>
+                    <option value="1">Giá tăng dần</option>
+                    <option value="2">Giá giảm dần</option>
+                </select>
+            </div>
+
+            <div class="advanced-search-price-pro">
+                <span>Giá từ</span>
+                <input type="number" placeholder="tối thiểu" id="min-price" onchange="searchProducts()">
+                <span>đến</span>
+                <input type="number" placeholder="tối đa" id="max-price" onchange="searchProducts()">
+                <button id="advanced-search-price-pro-btn" onclick="searchAndScroll()" ><i class="fa fa-search"></i></button>
+            </div>
+            <div class="advanced-search-control">
+                <button id="close-search" onclick="closeSearchAdvanced()"><i class="fa fa-times"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <main class="main-wrapper">
+        <div class="container" id="homePage">
+            <div class="home-slider">
+                <!--===== home =>slide ve thong tin ve cac mau xe moi ra.... =======-->
+                <section class=" home" id="home">
+                  <div class="slider-container">
+
+                    <div class="slides">
+                      <div class="slide">
+                        <img src="/assets/image/slide1.JPG" alt="" />
+                      </div>
+
+                      <div class="slide">
+                        <img src="/assets/image/slide2.jpg" alt="" />
+                      </div>
+
+                      <div class="slide">
+                        <img src="/assets/image/slide3.JPG" alt="" />
+                      </div>
+
+                      <div class="slide">
+                        <img src="/assets/image/slide4.jpg" alt="" />
+                      </div>
+
+                      <div class="slide">
+                        <img src="/assets/image/slide5.jpg" alt="" />
+                      </div>
+
+                      <div class="slide">
+                        <img src="/assets/image/slide6.jpg" alt="" />
+                      </div>
+
+                      <div class="slide">
+                        <img src="/assets/image/slide7.jpg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </section>
+            </div>
+            
+
+
+            <div class="home-title-block" id="home-title">
+                <h2 class="home-title">Sản Phẩm Nổi Bật Tại Showroom</h2>
+            </div>
+            <div class="home-products" id="home-products">
+            </div>
+
+
+            <div class="page-nav" id="page-nav">
+                <ul class="page-nav-list">
+                    <li id="prev-page" class="page-nav-item">
+                        <a href="javascript:;"><i class="fas fa-chevron-circle-right"></i></a>
+                    </li>
+                    <li class="page-nav-item" id="page-1">
+                        <a href="javascript:;">1</a>
+                    </li>
+                    <li class="page-nav-item" id="page-2">
+                        <a href="javascript:;">2</a>
+                    </li>
+                    <li class="page-nav-item" id="page-3">
+                        <a href="javascript:;">3</a>
+                    </li>
+                    <li class="page-nav-item ellipsis">
+                        <span>...</span>
+                    </li>
+
+                    <li class="page-nav-item" id="page-present" >
+                        <a href="javascript:;"></a>
+                    </li>
+
+                    <li class="page-nav-item ellipsis">
+                        <span>...</span>
+                    </li>
+
+                    <li class="page-nav-item" id="page-last-2">
+                        <a href="javascript:;"></a>
+                    </li>
+                    <li class="page-nav-item" id="page-last-1">
+                        <a href="javascript:;"></a>
+                    </li>
+                    <li class="page-nav-item" id="page-last">
+                        <a href="javascript:;"></a>
+                    </li>
+                    <li id="next-page" class="page-nav-item">
+                        <a href="javascript:;"><i class="fas fa-chevron-circle-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="container" id="account-user">
+            <div class="main-account">
+                <div class="main-account-header">
+                    <h3>Chỉnh sửa thông tin tài khoản của bạn</h3>
+                </div>
+                <div class="main-account-body">
+                    
+                    <form action="" class="info-user">
+                        <div class="form-group">
+                            <label for="info-name" class="form-label">Họ và tên</label>
+                            <input class="form-control" type="text" name="info-name" id="info-name" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="info-username" class="form-label">Tên đăng nhập</label>
+                            <input class="form-control" type="text" name="info-username" id="info-username" disabled="true"
+                                placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="info-phone" class="form-label">Số điện thoại</label>
+                            <input class="form-control" type="text" name="info-phone" id="info-phone" disabled="true"
+                                placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="info-email" class="form-label">Email</label>
+                            <input class="form-control" type="email" name="info-email" id="info-email"
+                                placeholder="Thêm địa chỉ email của bạn">
+                            <span class="inforemail-error form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="info-∂address" class="form-label">Địa chỉ</label>
+                            <input class="form-control" type="text" name="info-address" id="info-address"
+                                placeholder="Thêm địa chỉ giao hàng của bạn">
+                        </div>
+                    </form>
+                    
+                    
+                    <div class="main-account-body-row">
+                        <button id="save-info-user" onclick="changeInformation()"> Lưu thay đổi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="change-password-user">
+            <div class="main-account">
+                <div class="main-account-header">
+                    <h3>Chỉnh sửa mật khẩu người dùng</h3>
+                </div>
+                <div class="main-account-body">
+                    
+                    <form action="" class="change-password">
+                        <div class="form-group">
+                            <label for="" class="form-label w60">Mật khẩu hiện tại</label>
+                            <input class="form-control" type="password" name="" id="password-cur-info"
+                                placeholder="Nhập mật khẩu hiện tại">
+                            <span class="password-cur-info-error form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="form-label w60">Mật khẩu mới </label>
+                            <input class="form-control" type="password" name="" id="password-after-info"
+                                placeholder="Nhập mật khẩu mới">
+                            <span class="password-after-info-error form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="form-label w60">Xác nhận mật khẩu mới</label>
+                            <input class="form-control" type="password" name="" id="password-comfirm-info"
+                                placeholder="Nhập lại mật khẩu mới">
+                            <span class="password-after-comfirm-error form-message"></span>
+                        </div>
+                    </form>
+     
+                    <div class="main-account-body-row">
+                        <button id="save-password" onclick="changePassword()"> Đổi mật khẩu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="order-history">
+            <div class="main-account">
+                <div class="main-account-header">
+                 <h3>Quản lý đơn hàng của bạn</h3>
+                    <p>Xem chi tiết, trạng thái của những đơn hàng đã đặt.</p>
+                </div>
+                <div class="main-account-body">
+                    <div class="order-history-section">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="modal product-detail">
+        <button class="modal-close close-popup"><i class="fa fa-times"></i></button>
+        <div class="modal-container mdl-cnt" id="product-detail-content"></div>
+    </div>
+
+    <!-- Đăng ksy -->
+    <div class="modal sign-up-login">
+        <div class="modal-container">
+            <button class="form-close" onclick="closeModal()"><i class="fa fa-times"></i></button>
+            <div class="forms mdl-cnt">
+
+
+
+                <div class="form-content sign-up">
+                    <h3 class="form-title">
+                        Đăng ký tài khoản
+                    </h3>
+                 
+                    <form action="" class="sign-up-form">
+                        <div class="form-group">
+                            <label for="fullname" class="form-label">Họ tên</label>
+                            <input id="fullname" name="fullname" type="text" placeholder="VD: Hoàng Đình Hoàn.."
+                                class="form-control">
+                            <span class="form-message-name form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Số điện thoại</label>
+                            <input id="phone" name="phone" type="number" placeholder="Nhập số điện thoại"
+                                class="form-control">
+                            <span class="form-message-phone form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input id="email" name="email" type="email" placeholder="Email: example@gmail.com"
+                                class="form-control">
+                            <span class="form-message-email form-message"></span>
+                        </div>
+
+                         <div class="form-group">
+                            <label for="username" class="form-label">Username</label>
+                            <input id="username" name="username" type="text" placeholder="Username"
+                                class="form-control">
+                            <span class="form-message-username form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="form-label">Mật khẩu</label>
+                            <input id="password" name="password" type="password" placeholder="Nhập mật khẩu"
+                                class="form-control">
+                            <span class="form-message-password form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
+                            <input id="password_confirmation" name="password_confirmation"
+                                placeholder="Nhập lại mật khẩu" type="password" class="form-control">
+                            <span class="form-message-password-confi form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <input class="checkbox" name="checkbox" required="" type="checkbox" id="checkbox-sign-up">
+                            <label for="checkbox-sign-up" class="form-checkbox" style="margin: 5px 0;">Tôi đồng ý với <a href="#"
+                                    title="chính sách trang web" target="_blank">chính sách khách hàng</a> và <a href="#"
+                                    title="bảo mật thông tin" target="_blank">bảo mật thông tin</a> </label>
+                            <p class="form-message-checkbox form-message"></p>
+                        </div>
+                        <button class="form-submit" id="sign-up-button">Đăng ký</button>
+                        <p class="change-login">Bạn đã có tài khoản ? <a href="javascript:;" class="login-link">Đăng nhập
+                            ngay</a></p>
+                    </form>
+                </div>
+                <div class="form-content login">
+                    <h3 class="form-title">Đăng nhập tài khoản</h3>
+                
+                    <form action="" class="login-form">
+                        <div class="form-group">
+                            <label for="userName" class="form-label">Tên đăng nhập</label>
+                            <input id="userName-login" name="userName" type="text" placeholder="Nhập tên đăng nhập" class="form-control">
+                            <span class="form-message userNamelog"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Mật khẩu</label>
+                            <div class="password-container">
+                                <input id="password-login" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+                                <span class="form-message-check-login form-message"></span>
+                                <span class="toggle-password" onclick="togglePasswordVisibility()"><i class="fa fa-eye"></i></span>
+                            </div>
+                        </div>
+                        <button class="form-submit" id="login-button">Đăng nhập</button>
+                        <p class="change-login">Bạn chưa có tài khoản ? <a href="javascript:;" class="sign-up-link">Đăng kí ngay</a></p>
+                    </form>
+                </div>
+
+
+
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal-cart">
+        <div class="cart-container">
+            
+            <div class="cart-header">
+                <h3 class="cart-header-title"><i class="fa fa-shopping-basket"></i> Giỏ hàng</h3>
+                <button class="cart-close" onclick="closeCart()"><i class="fa fa-times"></i></button>
+            </div>
+            <div class="cart-body">
+                <div class="no-cart">
+                    <i class="fa fa-shopping-cart"></i>
+                    <p>Giỏ hàng hiện tại hiện chưa có sản phầm nào</p>
+                    <p>Tham khảo các hãng xe trong SaiThanh showroom để rước cho mình một xếp hộp yêu thích nào.</p>
+                </div>
+                <ul class="cart-list">
+                </ul>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total-price">
+                    <p class="text-sum-money">Tổng tiền:</p>
+                    <p class="text-price">0đ</p>
+                </div>
+                <div class="cart-footer-payment">
+                    <button class="buy-again"><i class="fa fa-plus"></i> Mua tiếp</button>
+                    <button class="get-pay disabled">Thanh toán</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal detail-order">
+        <div class="modal-container mdl-cnt">
+            <h3 class="modal-container-title">Thông tin đơn hàng</h3>
+            <button class="form-close" onclick="closeModal()"><i class="fa fa-times"></i></button>
+            <div class="detail-order-content">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Wrapper -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-top-content">
+                    <div class="footer-top-img">
+                        <img src="/assets/image/logo-saithanh-removebg-preview.png" alt="">
+                    </div>
+                    <div class="footer-top-sub-box">
+                        <div class="footer-top-subs">
+                            <h2 class="footer-top-subs-title">Đăng ký nhận thông báo</h2>
+                            <p class="footer-top-subs-text">Nhận thông tin mới nhất từ chúng tôi</p>
+                        </div>
+                        <form class="form-ground">
+                            <input type="email" class="form-ground-input" placeholder="Nhập email của bạn">
+                            <button class="form-ground-btn">
+                                <i class="fa fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="widget-area">
+            <div class="container">
+                <div class="widget-row">
+                    <div class="widget-row-col-1">
+                        <h3 class="widget-title">SaiThanh Showroom</h3>
+                        <div class="widget-row-col-content">
+                            <p>SaiThanh Showroom - nền tảng hàng đầu trong lĩnh vực xe hơi tại Việt Nam. Cam kết mang đến cho khách hàng trải nghiệm hoàn toàn minh bạch, nhanh chóng và đáng tin cậy.</p>
+                        </div>
+                        <div class="widget-social">
+                            <div class="widget-social-item">
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </div>
+                            <div class="widget-social-item">
+                                <a href="#">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                            <div class="widget-social-item">
+                                <a href="#">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                            <div class="widget-social-item">
+                                <a href="#">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                            <div class="widget-social-item">
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="widget-row-col">
+                        <h3 class="widget-title">Dịch vụ</h3>
+                        <ul class="widget-contact">
+                            <li class="widget-contact-item">
+                                <a href="">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <span>Mua bảo hiểm Oto</span>
+                                </a>
+                            </li>
+                            <li class="widget-contact-item">
+                                <a href="">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <span>Trả góp mua xe</span>
+                                </a>
+                            </li>
+                            <li class="widget-contact-item">
+                                <a href="">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <span>Liên hệ</span>
+                                </a>
+                            </li>
+                            <li class="widget-contact-item">
+                                <a href="">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <span>Tin tức</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="widget-row-col">
+                        <h3 class="widget-title">SaiThanhShowroom</h3>
+                        <ul class="widget-contact">
+                            <li class="widget-contact-item">
+                                <a href="">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <span>Giới thiệu công ty</span>
+                                </a>
+                            </li>
+                            <li class="widget-contact-item">
+                                <a href="">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <span>Cơ hội việc làm</span>
+                                </a>
+                            </li>
+                            <li class="widget-contact-item">
+                                <a href="">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <span>Chính sách bảo mật</span>
+                                </a>
+                            </li>
+                            <li class="widget-contact-item">
+                                <a href="">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <span>Điều khoản sử dụng</span>
+                                </a>
+                            </li>
+                            <li class="widget-contact-item">
+                                <a href="">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <span>Chứng nhận SaiThanh</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="widget-row-col-1">
+                        <h3 class="widget-title">Liên hệ</h3>
+                        <div class="contact">
+                            <div class="contact-item">
+                                <div class="contact-item-icon">
+                                    <i class="fa fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-content">
+                                    <span>237 Đ.An Dương Vương, Phường 3, Quận 5,Thành phố Hồ Chí Minh</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-icon">
+                                    <i class="fa fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-content">
+                                    <span>4 Đ. Tôn Đức Thắng, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-item-icon">
+                                    <i class="fa fa-phone-alt"></i>
+                                </div>
+                                <div class="contact-content contact-item-phone">
+                                    <span>0367899999</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-item-icon">
+                                    <i class="fa fa-mobile-alt"></i>
+                                </div>
+                                <div class="contact-content contact-item-clock">
+                                    <span>0377984957 (Mr. Hoan)</span>
+                                </div>
+                            </div>
+                             <div class="contact-item">
+                                <div class="contact-item-icon">
+                                    <i class="fa fa-mobile-alt"></i>
+                                </div>
+                                <div class="contact-content contact-item-clock">
+                                    <span>0377984957 (Mr. Hieu)</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-item-icon">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div class="contact-content contact-item-email">
+                                    <span>saithanhshowroomvn@gmail.com</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-item-icon">
+                                    <i class="fa fa-clock"></i>
+                                </div>
+                                <div class="contact-content contact-item-clock">
+                                    <span>8:00am - 5:00pm</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright-wrap">
+        <div class="container">
+            <div class="copyright-content">
+                <h4>
+                    CÔNG TY TNHH XE SÀI THÀNH SHOWROOM. Hotline: 02 8888 978 68 (Toàn quốc) Số ĐKKD: 0312648170
+                </h4>
+                <p>
+                    Địa chỉ: Tầng 3, Toà nhà E, 273 An Dương Vương, Phường 3, Quận 5, Thành
+                    Phố Hồ Chí Minh, Việt Nam. ©2023 by ChongRotMon Company.
+                </p>
+                <p>SaiThanhGara Vietnam là một thành viên của fram^ Investments</p>
+            </div>
+        </div>
+    </div>
+    <div class="back-to-top">
+        <a href="#"><i class="fa fa-arrow-up"></i></a>
+    </div>
+
+    <div class="checkout-page">
+        <div class="checkout-header">
+            <div class="checkout-return">
+                <button onclick="closecheckout()"><i class="fa fa-chevron-left"></i></button>
+            </div>
+            <h2 class="checkout-title">Thanh toán</h2>
+        </div>
+        <main class="checkout-section container">
+            <div class="checkout-col-left">
+                <div class="checkout-row">
+                    <div class="checkout-col-title">
+                        Thông tin đơn hàng
+                    </div>
+                    <div class="checkout-col-content">
+
+                        <div class="content-group">
+                            <p class="checkout-content-label">Hình thức giao nhận</p>
+                            <div class="checkout-type-order">
+                                <button class="type-order-btn active" id="giaotannoi">
+                                    <i class="fa-duotone fa-moped"
+                                        style="--fa-secondary-opacity: 1.0; --fa-primary-color: dodgerblue; --fa-secondary-color: #ffb100;"></i>
+                                        Giao xe tại nhà
+                                </button>
+                                <button class="type-order-btn" id="tudenlay">
+                                    <i class="fa-duotone fa-box-heart"
+                                        style="--fa-secondary-opacity: 1.0; --fa-primary-color: pink; --fa-secondary-color: palevioletred;"></i>
+                                        Giao xe tại showroom
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="checkout-col-title">
+                            Thông tin người nhận
+                        </div>
+                        <div class="content-group">
+                            <form action="" class="info-nhan-hang">
+                                <div class="form-group">
+                                    <input id="tennguoinhan" name="tennguoinhan" type="text"
+                                        placeholder="Tên người nhận" class="form-control">
+                                    <span class="form-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input id="sdtnhan" name="sdtnhan" type="text" placeholder="Số điện thoại nhận hàng"
+                                        class="form-control">
+                                    <span class="form-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input id="diachinhan" name="diachinhan" type="text" placeholder="Địa chỉ nhận hàng"
+                                        class="form-control chk-ship">
+                                    <span class="form-message"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="content-group">
+                            <p class="checkout-content-label">Ngày giao hàng</p>
+                            <div class="date-order">
+                            </div>
+                        </div>
+
+                        
+                        <div class="content-group chk-ship" id="giaotannoi-group">
+                            <p class="checkout-content-label">Thời gian giao hàng</p>
+                            
+                            <div class="delivery-time">
+                                <input type="radio" name="giaongay" id="giaongay" class="radio">
+                                <label for="giaongay">Giao ngay khi xe về showroom</label>
+                            </div>
+                            <div class="delivery-time">
+                                <input type="radio" name="giaongay" id="deliverytime" class="radio">
+                                <label for="deliverytime">Giao vào thời gian sau</label>
+                                <select class="choise-time">
+                                    <option data-hours="08" value="08:00" selected="selected">08:00 - 09:00</option>
+
+                                    <option data-hours="09" value="09:00">09:00 - 10:00</option>
+
+                                    <option data-hours="10" value="10:00"> 10:00 - 11:00</option>
+
+                                    <option data-hours="11" value="11:00"> 11:00 - 12:00</option>
+
+                                    <option data-hours="12" value="12:00"> 12:00 - 13:00</option>
+
+                                    <option data-hours="13" value="13:00"> 13:00 - 14:00</option>
+
+                                    <option data-hours="14" value="14:00"> 14:00 - 15:00</option>
+
+                                    <option data-hours="15" value="15:00"> 15:00 - 16:00</option>
+
+                                    <option data-hours="16" value="16:00"> 16:00 - 17:00</option>
+
+                                
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="content-group" id="tudenlay-group">
+                            <p class="checkout-content-label">
+                            Nhận xe tại chi nhánh</p>
+                            <div class="delivery-time">
+                                <input type="radio" name="chinhanh" id="chinhanh-1" class="radio">
+                                <label for="chinhanh-1">Chi Nhánh 1: 273 An Dương Vương, Phường 3, Quận 5,  Thành phố Hồ Chí Minh.</label>
+                            </div>
+                            <div class="delivery-time">
+                                <input type="radio" name="chinhanh" id="chinhanh-2" class="radio">
+                                <label for="chinhanh-2">Chi Nhánh 2: 4 Đ. Tôn Đức Thắng, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh.</label>
+                            </div>
+                        </div>
+                       
+        
+                    </div>
+                </div>
+                <div class="checkout-row">
+                    <div class="checkout-col-content"></div>
+                </div>
+            </div>
+            <div class="checkout-col-right">
+                <p class="checkout-content-label">Dự tính chi phí</p>
+                <div class="bill-total" id="list-order-checkout"></div>
+                
+                <div class="bill-payment">
+                    <div class="total-bill-order"></div>
+                    <div class="policy-note">
+                        Bằng việc bấm vào nút “Đặt hàng", tôi đồng ý với
+                        <a href="#" target="_blank">chính sách hoạt động</a>
+                        của chúng tôi.
+                    </div>
+                    <div class="policy-note">
+                        Nếu cần gì thêm về sản phẩm hoặc cần tư vấn, hãy nhấc máy gọi đến chúng tôi với Hotline: 0933476706
+                        hoặc đến cửa hàng gần nhất.
+                    </div>
+                    <div class="policy-note">
+                        Chi Nhánh 1: 273 An Dương Vương, Phường 3, Quận 5,  Thành phố Hồ Chí Minh.
+                    </div>
+                    <div class="policy-note">
+                        Chi Nhánh 2: 4 Đ. Tôn Đức Thắng, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh.
+                    </div>
+                </div>
+                <div class="total-checkout">
+                    <div class="text">Tổng tiền</div>
+                    <div class="price-bill">
+                        <div class="price-final" id="checkout-cart-price-final">0</div>
+                    </div>
+                </div>
+                <button class="complete-checkout-btn">Đặt xe</button>
+            </div>
+        </main>
+    </div>
+    <div id="toast"></div>
+    <script src="/assets/js/data.js"></script>
+    <script src="/assets/js/index.js"></script>
+    <script src="/assets/js/checkout.js"></script>
+   
+</body>
+</html>

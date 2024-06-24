@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/admin.css">
+    <link rel="stylesheet" href="/assets/css/toast.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- favicon -->
+    <link rel="icon" href="/assets/image/logo-saithanh-removebg-preview.png" type="image/png">
+    <title>Saithanh-Admin</title>
+</head>
+
+<body>
+    <header class="header">
+        <button class="menu-icon-btn hide-on-mobile">
+            <div class="menu-icon">
+                <i class="fa fa-bars"></i>
+            </div>
+        </button>
+        <div class="header-heading">SaiThanh Showroom</div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar active">
+            <div class="top-sidebar">
+                <a href="#" class="channel-logo"><img src="/assets/image/logo-saithanh-removebg-preview.png" alt="Channel Logo"></a>
+                <div class="hidden-sidebar your-channel">
+                    <span>Uy tín tạo nên thương hiệu</span>
+                </div>
+            </div>
+
+            <div class="middle-sidebar">
+                
+                <ul class="sidebar-list">
+                   
+                    <li class="sidebar-list-item tab-content active">
+                        <a href="#" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa fa-home"></i></div>
+                            <div class="hidden-sidebar">DashBoard</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item tab-content">
+                        <a href="#" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa fa-car"></i></div>
+                            <div class="hidden-sidebar">Product</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item tab-content">
+                        <a href="#" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa fa-group"></i></div>
+                            <div class="hidden-sidebar">Customer</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item tab-content">
+                        <a href="#" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa fa-shopping-cart"></i></div>
+                            <div class="hidden-sidebar">Cart</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item tab-content">
+                        <a href="#" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa fa-bar-chart"></i></div>
+                            <div class="hidden-sidebar">Statistics</div>
+                        </a>
+                    </li>
+                
+                    <li class="sidebar-list-item user-logout">
+                        <a href="/Layout/index.html" class="sidebar-link" >
+                            <div class="sidebar-icon"><i class="fa fa-sign-out-alt"></i></div>
+                            <div class="hidden-sidebar">Home</div>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+            </div>
+
+
+            <div class="bottom-sidebar"> 
+                <a href="#" class="sidebar-info-account">
+                    <div class="sidebar-info-icon"><i class="fa fa-user"></i></div>
+                    <div class="hidden-sidebar" id="name-acc"></div>
+                </a>
+            </div>
+        </aside>
+        <main class="content active">
+            <div class="section active">
+                <div class="cards">
+                    <div class="card-single">
+                        <div class="box">
+                             <ion-icon name="eye-outline" class="Customer-card"></ion-icon>
+                            
+                            <div class="on-box">
+                                <h2 id="amount-user">0</h2>
+                                <h3>Khách hàng</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-single">
+                        <div class="box">
+                            <ion-icon name="car-outline" class="Product-card"></ion-icon>
+                            <div class="on-box">
+                                <h2 id="amount-product">0</h2>
+                                <h3>Sản phẩm</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-single">
+                        <div class="box">
+                            <ion-icon name="cash-outline" class="Statistics-card"></ion-icon>
+                            <div class="on-box">
+                                <h2 id="statistics">0</h2>
+                                <h3>Doanh thu</h3>   
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Product  -->
+            <div class="section product-all">
+                <div class="admin-control">
+                    <div class="admin-control-left">
+                        <select class="btn-control-large" name="style-search" id="style-search" onchange="showProduct()">
+                            <option>Tất cả</option>
+                            <option>Sedan</option>
+                            <option>SUV</option>
+                            <option>Hatchback</option>
+                            <option>Pickup</option>
+                            <option>Roadster</option>
+                            <option>Coupe</option>
+                            <option>MPV</option>
+                            <option>Đã xóa</option>
+                        </select>
+
+
+                        <select class="btn-control-large" name="brand-search" id="brand-search" onchange="showProduct()">
+                            <option>Tất cả</option>
+                            <option>Aston Martin</option>
+                            <option>Audi</option>
+                            <option>Bentley</option>
+                            <option>BMW</option>
+                            <option>Ford</option>
+                            <option>Honda</option>
+                            <option>Hyundai</option>
+                            <option>Isuzu</option>
+                            <option>Jaguar</option>
+                            <option>Jeep</option>
+                            <option>Kia</option>
+                            <option>Lexus</option>
+                            <option>Maserati</option>
+                            <option>Mercedes</option>
+                            <option>Mitsubishi</option>
+                            <option>Porsche</option>
+                            <option>Land Rover</option>
+                            <option>Toyota</option>
+                            <option>VinFast</option>
+                            <option>Volkswagen</option>
+                            <option>Volvo</option>
+                        </select>
+
+
+                    </div>
+                    <div class="admin-control-center">
+                        <form action="" class="form-search">
+                            <span class="search-btn"><i class="fa fa-search"></i></span>
+                            <input id="form-search-product" type="text" class="form-search-input" placeholder="Tìm kiếm tên xe ...." oninput="showProduct()">
+                        </form>
+                    </div>
+                    <div class="admin-control-right">
+                        <button class="btn-control-large" id="btn-cancel-product" onclick="cancelSearchProduct()"><i class="fa fa-refresh fa-spin"></i></button>
+                        <button class="btn-control-large" id="btn-add-product"><i class="fa fa-plus"></i></button>                  
+                    </div>
+                </div>
+                <div id="show-product"></div>
+
+                
+                <div class="page-nav">
+                    <ul class="page-nav-list">
+                        
+                    </ul>
+                </div>
+
+
+            </div>
+            <!-- Account  -->
+            <div class="section">
+                <div class="admin-control">
+                    <div class="admin-control-left">
+                        <select name="status-user" id="status-user" onchange="showUser()">
+                            <option value="2">Tất cả</option>
+                            <option value="1">Hoạt động</option>
+                            <option value="0">Bị khóa</option>
+                        </select>
+                    </div>
+                    <div class="admin-control-center">
+                        <form action="" class="form-search">
+                            <span class="search-btn"><i class="fa fa-search"></i></span>
+                            <input id="form-search-user" type="text" class="form-search-input" placeholder="Tìm kiếm khách hàng..." oninput="showUser()">
+                        </form>
+                    </div>
+                    <div class="admin-control-right">
+                        <form action="" class="filter-date">
+                            <div>
+                                <label for="time-start">Từ</label>
+                                <input type="date" class="form-control-date" id="time-start-user" onchange="showUser()">
+                            </div>
+                            <div>
+                                <label for="time-end">Đến</label>
+                                <input type="date" class="form-control-date" id="time-end-user" onchange="showUser()">
+                            </div>
+                        </form>      
+                        <button class="btn-reset-order" onclick="cancelSearchUser()"><i class="fa fa-refresh fa-spin"></i></button>     
+                    </div>
+                </div>
+                <div class="table">
+                    <table width="100%">
+                        <thead>
+                            <tr>
+                                <td>STT</td>
+                                <td>Họ và tên</td>
+                                <td>Số điện thoại</td>
+                                <td>Tên đăng nhập</td>
+                                <td>Ngày đăng kí</td>
+                                <td>Trạng thái</td>
+                                <td>Chỉnh sửa</td>
+                            </tr>
+                        </thead>
+                        <tbody id="show-user">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Order  -->
+            <div class="section">
+                <div class="admin-control">
+                    <div class="admin-control-left">
+                        <select name="status" id="status" onchange="findOrder()">
+                            <option value="2">Tất cả</option>
+                            <option value="1">Đã xử lý</option>
+                            <option value="0">Chưa xử lý</option>
+                        </select>
+                    </div>
+                    <div class="admin-control-center">
+                        <form action="" class="form-search">
+                            <span class="search-btn"><i class="fa fa-search"></i></span>
+                            <input id="form-search-order" type="text" class="form-search-input" placeholder="Tìm kiếm mã đơn, khách hàng..." oninput="findOrder()">
+                        </form>
+                    </div>
+                    <div class="admin-control-right">
+                        <form action="" class="filter-date">
+                            <div>
+                                <label for="time-start">Từ</label>
+                                <input type="date" class="form-control-date" id="time-start" onchange="findOrder()">
+                            </div>
+                            <div>
+                                <label for="time-end">Đến</label>
+                                <input type="date" class="form-control-date" id="time-end" onchange="findOrder()">
+                            </div>
+                        </form>      
+                        <button class="btn-reset-order" onclick="cancelSearchOrder()"><i class="fa fa-refresh fa-spin"></i></button>               
+                    </div>
+                </div>
+                <div class="table">
+                    <table width="100%">
+                        <thead>
+                            <tr>
+                                <td>Mã đơn</td>
+                                <td>Khách hàng</td>
+                                <td>Ngày đặt</td>
+                                <td>Tổng tiền</td>
+                                <td>Trạng thái</td>
+                                <td>Thao tác</td>
+                            </tr>
+                        </thead>
+                        <tbody id="showOrder">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="section">
+                
+                <div class="order-statistical" id="order-statistical">
+                    <div class="order-statistical-item" style="border: 20px solid red; ">
+                        <div class="order-statistical-item-icon">
+                             <ion-icon name="car-sport-outline"></ion-icon>
+                        </div>
+                        <div class="order-statistical-item-content">
+                            <p class="order-statistical-item-content-desc">Sản phẩm được bán ra</p>
+                            <h4 class="order-statistical-item-content-h" id="quantity-product"></h4>
+                        </div>
+                        
+                    </div>
+                    <div class="order-statistical-item" style="border: 20px solid green; ">
+                        <div class="order-statistical-item-icon">
+                            <ion-icon name="reader-outline"></ion-icon>
+                        </div>
+                        <div class="order-statistical-item-content">
+                            <p class="order-statistical-item-content-desc">Số lượng bán ra</p>
+                            <h4 class="order-statistical-item-content-h" id="quantity-order"></h4>
+                        </div>
+                        
+                    </div>
+                    <div class="order-statistical-item" style="border: 20px solid blue; ">
+                        <div class="order-statistical-item-icon">
+                             <ion-icon name="stats-chart-outline"></ion-icon>
+                        </div>
+                        <div class="order-statistical-item-content">
+                            <p class="order-statistical-item-content-desc">Doanh thu</p>
+                            <h4 class="order-statistical-item-content-h" id="quantity-sale"></h4>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="admin-control">
+                    <div class="admin-control-left">
+                        <select name="style-search-tk" id="style-search-tk" onchange="thongKe()">
+                            <option>Tất cả</option>
+                            <option>Sedan</option>
+                            <option>SUV</option>
+                            <option>Hatchback</option>
+                            <option>Pickup</option>
+                            <option>Roadster</option>
+                            <option>Coupe</option>
+                            <option>MPV</option>
+                            <option>Đã xóa</option>
+                        </select>
+
+                        <select name="brand-search-tk" id="brand-search-tk" onchange="thongKe()">
+                            <option>Tất cả</option>
+                            <option>Aston Martin</option>
+                            <option>Audi</option>
+                            <option>Bentley</option>
+                            <option>BMW</option>
+                            <option>Ford</option>
+                            <option>Honda</option>
+                            <option>Hyundai</option>
+                            <option>Isuzu</option>
+                            <option>Jaguar</option>
+                            <option>Jeep</option>
+                            <option>Kia</option>
+                            <option>Lexus</option>
+                            <option>Maserati</option>
+                            <option>Mercedes</option>
+                            <option>Mitsubishi</option>
+                            <option>Porsche</option>
+                            <option>Land Rover</option>
+                            <option>Toyota</option>
+                            <option>VinFast</option>
+                            <option>Volkswagen</option>
+                            <option>Volvo</option>
+                        </select>
+                    </div>
+                    <div class="admin-control-center">
+                        <form action="" class="form-search">
+                            <span class="search-btn"><i class="fa fa-search"></i></span>
+                            <input id="form-search-tk" type="text" class="form-search-input" placeholder="Tìm kiếm tên xe..." oninput="thongKe()">
+                        </form>
+                    </div>
+                    <div class="admin-control-right">
+                        <form action="" class="filter-date">
+                            <div>
+                                <label for="time-start">Từ</label>
+                                <input type="date" class="form-control-date" id="time-start-tk" onchange="thongKe()">
+                            </div>
+                            <div>
+                                <label for="time-end">Đến</label>
+                                <input type="date" class="form-control-date" id="time-end-tk" onchange="thongKe()">
+                            </div>
+                        </form> 
+                        <button class="btn-reset-order" onclick="thongKe(1)"><i class="fas fa-sort-amount-up"></i></button>
+                        <button class="btn-reset-order" onclick="thongKe(2)"><i class="fas fa-sort-amount-down"></i></button>
+                        <button class="btn-reset-order" onclick="thongKe(0)"><i class="fa fa-circle-o-notch fa-spin"></i></button>                    
+                    </div>
+                </div>
+
+
+                <div class="table">
+                    <table width="100%">
+                        <thead>
+                            <tr>
+                                <td>STT</td>
+                                <td>Tên xe</td>
+                                <td>Số lượng bán</td>
+                                <td>Doanh thu</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody id="showTk">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    <div class="back-to-top">
+        <a href="#"><i class="fa fa-arrow-up"></i></a>
+    </div>
+
+    <div class="modal add-product">
+        <div class="modal-container">
+            <h3 class="modal-container-title add-product-e">THÊM MỚI SẢN PHẨM</h3>
+            <h3 class="modal-container-title edit-product-e">CHỈNH SỬA SẢN PHẨM</h3>
+            <button class="modal-close product-form"><i class="fa fa-times"></i></button>
+            <div class="modal-content">
+                <form action="" class="add-product-form">
+                    <div class="modal-content-left">
+                        <img src="/assets/image/add-car.png" alt="" class="upload-image-preview">
+                        <div class="form-group file">
+                            <label for="up-image" class="form-label-file"><i class="fa fa-plus"></i>Chọn hình ảnh</label>
+                            <input accept="image/jpeg, image/png, image/jpg" id="up-image" name="up-image" type="file" class="form-control" onchange="uploadImage(this)">
+                            <button id="delete-image" class="form-label-file edit-product-e"  ><i class="fa fa-times"></i>Xóa hình ảnh</button>
+                        </div>
+                    </div>
+                    <div class="modal-content-right">
+                        <div class="form-group">
+                            <label for="up-name" class="form-label">Tên Xe</label>
+                            <input id="up-name" name="up-name" type="text" placeholder="Nhập vào tên xe"
+                                class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="up-brand" class="form-label">Hãng Xe</label>
+                            <select name="up-brand" id="up-brand">
+                                <option>Tất cả</option>
+                                <option>Aston Martin</option>
+                                <option>Audi</option>
+                                <option>Bentley</option>
+                                <option>BMW</option>
+                                <option>Ford</option>
+                                <option>Honda</option>
+                                <option>Hyundai</option>
+                                <option>Isuzu</option>
+                                <option>Jaguar</option>
+                                <option>Jeep</option>
+                                <option>Kia</option>
+                                <option>Lexus</option>
+                                <option>Maserati</option>
+                                <option>Mercedes</option>
+                                <option>Mitsubishi</option>
+                                <option>Porsche</option>
+                                <option>Land Rover</option>
+                                <option>Toyota</option>
+                                <option>VinFast</option>
+                                <option>Volkswagen</option>
+                                <option>Volvo</option>
+                            </select>
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="up-style" class="form-label">Kiểu dáng</label>
+                            <select name="up-style" id="up-style">
+                                <option>Tất cả</option>
+                                <option>Sedan</option>
+                                <option>SUV</option>
+                                <option>Hatchback</option>
+                                <option>Pickup</option>
+                                <option>Roadster</option>
+                                <option>Coupe</option>
+                                <option>MPV</option>
+
+                            </select>
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="up-price" class="form-label">Giá bán</label>
+                            <input id="up-price" name="up-price" type="text" placeholder="Nhập giá bán"
+                                class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="up-desc" class="form-label">Mô tả</label>
+                            <textarea class="product-desc" id="up-desc" placeholder="Nhập mô tả xe..."></textarea>
+                            <span class="form-message"></span>
+                        </div>
+                        <button class="form-submit btn-add-product-form add-product-e" id="add-product-button">
+                            <i class="fa fa-plus"></i>
+                            <span>THÊM SẢN PHẨM</span>
+                        </button>
+                        <button class="form-submit btn-update-product-form edit-product-e" id="update-product-button">
+                            <i class="fa fa-floppy-o"></i>
+                            <span>LƯU THAY ĐỔI</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal detail-order">
+        <div class="modal-container">
+            <h3 class="modal-container-title">CHI TIẾT ĐƠN HÀNG</h3>
+            <button class="modal-close"><i class="fa fa-close"></i></button>
+            <div class="modal-detail-order"></div>
+            <div class="modal-detail-bottom"></div>
+        </div>
+    </div>
+    <div class="modal detail-order-product">
+        <div class="modal-container">
+            <button class="modal-close"><i class="fa fa-close"></i></button>
+            <div class="table">
+                <table width="100%">
+                    <thead>
+                        <tr>
+                            <td>Mã đơn</td>
+                            <td>Số lượng</td>
+                            <td>Đơn giá</td>
+                            <td>Ngày đặt</td>
+                        </tr>
+                    </thead>
+                    <tbody id="show-product-order-detail">
+                    </tbody>
+                </table>
+            </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal sign-up">
+        <div class="modal-container">
+            <h3 class="modal-container-title edit-account-e">THÔNG TIN NGƯỜI DÙNG</h3>
+            <button class="modal-close"><i class="fa fa-close"></i></button>
+            <div class="form-content sign-up">
+                <form action="" class="sign-up-form">
+                    <div class="form-group">
+                        <label for="userName" class="form-label">Tên đăng nhập</label>
+                        <input id="userName" name="userName" type="text" placeholder="Nhập tên đăng nhập" class="form-control" disabled="true" >
+                        <span class="form-message-userName form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="fullname" class="form-label">Tên đầy đủ</label>
+                        <input id="fullname" name="fullname" type="text" placeholder="VD: Hoàng Đình Hoàn" class="form-control" disabled="true">
+                        <span class="form-message-name form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input id="email" name="email" type="text" placeholder="Nhập email: Example@gmail.com" class="form-control" disabled="true">
+                        <span class="form-message-email form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Số điện thoại</label>
+                        <input id="phone" name="phone" type="text" placeholder="Nhập số điện thoại" class="form-control" disabled="true">
+                        <span class="form-message-phone form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label">Mật khẩu</label>
+                        <input id="password" name="password" type="text" placeholder="Nhập mật khẩu" class="form-control" disabled="true">
+                        <span class="form-message-password form-message"></span>
+                    </div>   
+                    <div class="form-group edit-account-e">
+                        <label for="" class="form-label">Trạng thái</label>
+                        <input type="checkbox" id="user-status" class="switch-input">
+                        <label for="user-status" class="switch"></label>
+                    </div>
+                    <button class="form-submit edit-account-e" id="btn-update-account"><i class="fa fa-save"></i> Lưu thông tin</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="toast"></div>
+    <script src="/assets/js/admin.js"></script>
+    
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
